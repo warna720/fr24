@@ -19,6 +19,8 @@ return new class extends Migration
             $table->string('destination');
             $table->timestamps();
 
+            $table->index('source');
+            $table->index('destination');
             $table->index(['source', 'destination']);
         });
     }
