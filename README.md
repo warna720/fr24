@@ -54,3 +54,4 @@
 - Implement possibility to check in ticket
 - Make sure no duplicate seatings booked on same flight (maybe a feature because airlines already do this /joke)
 - FlightController should not return all flights, should have some form of pagination
+- Improve tests to use class variables instead of instantiate same data/variables several times
