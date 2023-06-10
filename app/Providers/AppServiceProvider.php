@@ -2,6 +2,7 @@
 
 namespace App\Providers;
 
+use App\Http\Resources\FlightResource;
 use App\Http\Resources\TicketResource;
 use Illuminate\Support\ServiceProvider;
 
@@ -20,7 +21,7 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
-        TicketResource::withoutWrapping();
+        FlightResource::withoutWrapping();
         TicketResource::withoutWrapping();
     }
 }
