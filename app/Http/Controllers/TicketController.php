@@ -20,7 +20,7 @@ class TicketController extends Controller
         return new TicketResource(Ticket::create($validated));
     }
 
-    public function put(Ticket $ticket, Request $request)
+    public function update(Ticket $ticket, Request $request)
     {
         $validated = $request->validate([
             'status' => [

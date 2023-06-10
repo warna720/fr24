@@ -8,4 +8,4 @@ use Illuminate\Support\Facades\Route;
 Route::get('flights', [FlightController::class, 'index'])->name('flight_index');
 
 Route::post('tickets', [TicketController::class, 'store'])->name('ticket_store');
-Route::put('tickets/{ticket:uuid}', [TicketController::class, 'put'])->name('ticket_put');
+Route::put('tickets/{ticket:uuid}', [TicketController::class, 'update'])->name('ticket_update');

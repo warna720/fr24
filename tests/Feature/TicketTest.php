@@ -72,7 +72,7 @@ class TicketTest extends TestCase
         $this->assertEquals(Ticket::STATUS_ACTIVE, $ticket->status);
 
         $response = $this->putJson(
-            route('ticket_put', ['ticket' => $ticket->uuid]),
+            route('ticket_update', ['ticket' => $ticket->uuid]),
             [
                 'status' => Ticket::STATUS_CANCELLED,
             ],
@@ -88,7 +88,7 @@ class TicketTest extends TestCase
         $ticket = Ticket::factory()->create();
 
         $response = $this->putJson(
-            route('ticket_put', ['ticket' => $ticket->uuid]),
+            route('ticket_update', ['ticket' => $ticket->uuid]),
             [
                 'status' => Ticket::STATUS_CHECKED_IN,
             ],
@@ -96,7 +96,7 @@ class TicketTest extends TestCase
         $response->assertStatus(422);
 
         $response = $this->putJson(
-            route('ticket_put', ['ticket' => $ticket->uuid]),
+            route('ticket_update', ['ticket' => $ticket->uuid]),
             [
                 'status' => '1337',
             ],
@@ -104,7 +104,7 @@ class TicketTest extends TestCase
         $response->assertStatus(422);
 
         $response = $this->putJson(
-            route('ticket_put', ['ticket' => $ticket->uuid]),
+            route('ticket_update', ['ticket' => $ticket->uuid]),
             [
                 'status' => null,
             ],
@@ -120,7 +120,7 @@ class TicketTest extends TestCase
         $newSeat = Ticket::MAX_SEATING;
 
         $response = $this->putJson(
-            route('ticket_put', ['ticket' => $ticket->uuid]),
+            route('ticket_update', ['ticket' => $ticket->uuid]),
             [
                 'seat' => $newSeat,
             ],
@@ -136,7 +136,7 @@ class TicketTest extends TestCase
         $ticket = Ticket::factory()->create();
 
         $response = $this->putJson(
-            route('ticket_put', ['ticket' => $ticket->uuid]),
+            route('ticket_update', ['ticket' => $ticket->uuid]),
             [
                 'status' => 33,
             ],
@@ -144,7 +144,7 @@ class TicketTest extends TestCase
         $response->assertStatus(422);
 
         $response = $this->putJson(
-            route('ticket_put', ['ticket' => $ticket->uuid]),
+            route('ticket_update', ['ticket' => $ticket->uuid]),
             [
                 'status' => 0,
             ],
@@ -152,7 +152,7 @@ class TicketTest extends TestCase
         $response->assertStatus(422);
 
         $response = $this->putJson(
-            route('ticket_put', ['ticket' => $ticket->uuid]),
+            route('ticket_update', ['ticket' => $ticket->uuid]),
             [
                 'status' => '21',
             ],
@@ -160,7 +160,7 @@ class TicketTest extends TestCase
         $response->assertStatus(422);
 
         $response = $this->putJson(
-            route('ticket_put', ['ticket' => $ticket->uuid]),
+            route('ticket_update', ['ticket' => $ticket->uuid]),
             [
                 'status' => null,
             ],
